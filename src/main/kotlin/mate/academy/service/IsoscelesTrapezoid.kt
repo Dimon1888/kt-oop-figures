@@ -1,6 +1,6 @@
 package mate.academy.service
 
-import mate.academy.abstrac.Figure
+import mate.academy.abstract.Figure
 import mate.academy.model.Color
 
 class IsoscelesTrapezoid(

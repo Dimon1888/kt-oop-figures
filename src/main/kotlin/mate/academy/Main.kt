@@ -1,6 +1,6 @@
 package mate.academy
 
-import mate.academy.abstrac.Figure
+import mate.academy.abstract.Figure
 import mate.academy.service.FigureSupplier
 
 fun main() {
@@ -8,19 +8,19 @@ fun main() {
     val totalFigures = 6
     val figures = mutableListOf<Figure>()
 
-    println("--- Випадкові Фігури ---")
+
     val randomCount = totalFigures / 2
     repeat(randomCount) {
-        val figure = figureSupplier.getRandomFigure()
-        figures.add(figure)
-        figure.draw()
+        figures.add(figureSupplier.getRandomFigure())
     }
 
-    println("\n--- Фігури за Замовчуванням (Біле Коло з R=10) ---")
     val defaultCount = totalFigures - randomCount
     repeat(defaultCount) {
-        val figure = figureSupplier.getDefaultFigure()
-        figures.add(figure)
+        figures.add(figureSupplier.getDefaultFigure())
+    }
+
+       println("--- Повний Список Згенерованих Фігур (${figures.size} шт.) ---")
+    figures.forEach { figure ->
         figure.draw()
     }
 }
