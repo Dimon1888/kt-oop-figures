@@ -3,16 +3,14 @@ package mate.academy.service
 import mate.academy.abstract.Figure
 import mate.academy.model.Color
 
+private const val MIN_SIZE = 1.0
+private const val MAX_SIZE = 20.0
+private const val DEFAULT_RADIUS = 10.0
+private const val NUMBER_OF_FIGURE_TYPES = 5
+
 class FigureSupplier {
     private val colorSupplier = ColorSupplier()
     private val random = java.util.Random()
-
-    private companion object {
-        private const val MIN_SIZE = 1.0
-        private const val MAX_SIZE = 20.0
-        private const val DEFAULT_RADIUS = 10.0
-        private const val NUMBER_OF_FIGURE_TYPES = 5
-    }
 
     private fun getRandomSize(): Double =
         MIN_SIZE + (MAX_SIZE - MIN_SIZE) * random.nextDouble()
